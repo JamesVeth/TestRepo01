@@ -164,8 +164,34 @@ function moveSnake(){
 
     const head = {x:snake[0].x + xVelocity,
         y:snake[0].y + yVelocity};
-
+        /* 
+        Note that we use snake + xvelocity, not += because = is an
+        assignment operator, meaning that it affects the actual value 
+        of snake, whereas we are creating a temporary object, called head
+        and dding to its values.        
+        */
         
+        snake.unshift(head); // place the head object at the 0 of the snake
+        /*
+        
+        How this works:
+
+        We unshift and add a new head object, so we increment the size
+        of the snake +1, then we do an if statement to check if it's eaten
+        and if it has we do nothing but increment score and create the next 
+        food location, if we miss, we pop 
+        
+        */
+        if(snake[0].x == foodX && snake[0].y == foodY){
+
+            score += 1;
+            score.textContent = score;
+            createFood(); // randomise next food
+
+        } else {
+            snake.pop();
+
+        } 
         
         /*
          Array Functions
