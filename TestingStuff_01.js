@@ -162,7 +162,27 @@ function nextTick(){
 
 function moveSnake(){
 
-    const head = {x:snake[0].x,}
+    const head = {x:snake[0].x + xVelocity,
+        y:snake[0].y + yVelocity};
+
+        
+        
+        /*
+         Array Functions
+
+         shift - remove the first 0 position item of array and return the value
+         pop - remove the last position item of array and return the value
+         unshift - add 1 item to the first 0 position of array and return new length of array
+         push - add 1 item to the last position of array and return new length of array
+
+         Note that shift and pop return the value, which was popped and shifted; the idea is we are subtracting those
+         and storing them temporarily
+         while unshift and push return the new length of the array
+
+         LIFO - Last in first out
+         FIFO - First in first out
+        */
+        
     
 }
 

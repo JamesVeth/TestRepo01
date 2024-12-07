@@ -100,10 +100,14 @@
             foodX = randomFood(0, gameWidth - unitSize);
             foodY = randomFood(0, gameWidth - unitSize);
         };
+
+
         function drawFood(){
             ctx.fillStyle = foodColor;
             ctx.fillRect(foodX, foodY, unitSize, unitSize);
         };
+
+
         function moveSnake(){
             const head = {x: snake[0].x + xVelocity,
                         y: snake[0].y + yVelocity};
@@ -119,6 +123,8 @@
                 snake.pop();
             }     
         };
+
+
         function drawSnake(){
             ctx.fillStyle = snakeColor;
             ctx.strokeStyle = snakeBorder;
@@ -127,6 +133,8 @@
                 ctx.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize);
             })
         };
+
+        
         function changeDirection(event){
             const keyPressed = event.keyCode;
             const LEFT = 37;
